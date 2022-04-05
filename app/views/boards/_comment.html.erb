@@ -1,0 +1,15 @@
+<% comments.each do |comment| %>
+    <div id="comment_<%= comment.id %>" >
+        <%= comment.content %>
+    </div>
+    <div>
+        <%= link_to edit_board_comment_path(board_id: comment.board_id, id: comment.id),remote: true do %>
+          <button type='button'>編集</button>
+        <% end %>
+    </div>
+    <div class="list-inline-item">
+        <%= link_to board_comment_path(board_id: comment.board_id, id: comment.id), method: :delete, remote: true do %>
+            削除
+        <% end %>
+    </div>
+<% end %>

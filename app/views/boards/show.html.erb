@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @board.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @board.body %>
+</p>
+
+<div  id="comment_form">
+    <%= render "comment_form", board: @board, comment: @comment %> 
+</div>
+
+<div id='comment_area'>
+    <%= render "comment", comments: @comments %>
+</div>
+
+<%= link_to 'Edit', edit_board_path(@board) %> |
+<%= link_to 'Back', boards_path %>
